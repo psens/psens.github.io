@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pierre Sens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #F7F8FA;
+      --surface:  #FFFFFF;
+      --accent:   #1A4A8A;
+      --accent-light: #E8EFF9;
+      --text:     #1C1C1E;
+      --muted:    #6B7280;
+      --border:   #DDE1E8;
+      --pdf:      #C0392B;
+      --lib:      #1A7A4A;
+      --tgz:      #7B3FA0;
+      --radius:   6px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--accent);
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Source Serif 4', serif;
+      font-weight: 300;
+      font-size: 2.2rem;
+      letter-spacing: -.5px;
+      margin-bottom: 6px;
+    }
+    header p {
+      font-size: .92rem;
+      opacity: .75;
+      font-weight: 400;
+    }
+
+    /* ── Layout ── */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Section ── */
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .section-header {
+      padding: 20px 28px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-header h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: .01em;
+    }
+    .section-header p {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    /* ── File list ── */
+    ul.filelist {
+      list-style: none;
+      padding: 8px 0;
+    }
+
+    ul.filelist li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 28px;
+      border-bottom: 1px solid var(--border);
+      transition: background .12s;
+    }
+    ul.filelist li:last-child { border-bottom: none; }
+    ul.filelist li:hover { background: var(--bg); }
+
+    ul.filelist li .icon {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .03em;
+      flex-shrink: 0;
+    }
+    li.is-pdf  .icon { background: #FDECEA; color: var(--pdf); }
+    li.is-lib  .icon { background: #E7F5EE; color: var(--lib); }
+    li.is-tgz  .icon { background: #F3EBF9; color: var(--tgz); }
+
+    ul.filelist li .name {
+      flex: 1;
+    }
+    ul.filelist li .name a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: .9rem;
+    }
+    ul.filelist li .name a:hover { color: var(--accent); text-decoration: underline; }
+    ul.filelist li .name .desc {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    ul.filelist li .badge {
+      font-size: .7rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    li.is-pdf  .badge { background: #FDECEA; color: var(--pdf); }
+    li.is-lib  .badge { background: #E7F5EE; color: var(--lib); }
+    li.is-tgz  .badge { background: #F3EBF9; color: var(--tgz); }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      font-size: .78rem;
+      color: var(--muted);
+      padding: 32px 16px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Pierre Sens</h1>
+  <p>Université de Paris · Sorbonne Université</p>
+</header>
+
+<main>
+  <section>
+    <div class="section-header">
+      <h2>Sujets de TME de 3IN010</h2>
+      <p>Téléchargez les sujets et bibliothèques de travaux encadrés</p>
+    </div>
+
+    <ul class="filelist">
+
+      <li class="is-pdf">
+        <span class="icon">PDF</span>
+        <div class="name">
+          <a href="TME1.pdf">TME1.pdf</a>
+          <div class="desc">Travaux encadrés — séance 1</div>
+        </div>
+        <span class="badge">Sujet</span>
+      </li>
+
+      <li class="is-pdf">
+        <span class="icon">PDF</span>
+        <div class="name">
+          <a href="TME2.pdf">TME2.pdf</a>
+          <div class="desc">Travaux encadrés — séance 2</div>
+        </div>
+        <span class="badge">Sujet</span>
+      </li>
+
+      <li class="is-pdf">
+        <span class="icon">PDF</span>
+        <div class="name">
+          <a href="TME3.pdf">TME3.pdf</a>
+          <div class="desc">Travaux encadrés — séance 3</div>
+        </div>
+        <span class="badge">Sujet</span>
+      </li>
+
+      <li class="is-lib">
+        <span class="icon">LIB</span>
+        <div class="name">
+          <a href="libsched.pdf">libsched.pdf</a>
+          <div class="desc">Bibliothèque — ordonnancement</div>
+        </div>
+        <span class="badge">Bibliothèque</span>
+      </li>
+
+      <li class="is-pdf">
+        <span class="icon">PDF</span>
+        <div class="name">
+          <a href="TME4.pdf">TME4.pdf</a>
+          <div class="desc">Travaux encadrés — séance 4</div>
+        </div>
+        <span class="badge">Sujet</span>
+      </li>
+
+      <li class="is-pdf">
+        <span class="icon">PDF</span>
+        <div class="name">
+          <a href="TME5.pdf">TME5.pdf</a>
+          <div class="desc">Travaux encadrés — séance 5</div>
+        </div>
+        <span class="badge">Sujet</span>
+      </li>
+
+      <li class="is-pdf">
+        <span class="icon">PDF</span>
+        <div class="name">
+          <a href="TME6-7.pdf">TME6-7.pdf</a>
+          <div class="desc">Travaux encadrés — séances 6 et 7</div>
+        </div>
+        <span class="badge">Sujet</span>
+      </li>
+
+      <li class="is-lib">
+        <span class="icon">LIB</span>
+        <div class="name">
+          <a href="libsem.pdf">libsem.pdf</a>
+          <div class="desc">Bibliothèque — sémaphores</div>
+        </div>
+        <span class="badge">Bibliothèque</span>
+      </li>
+
+      <li class="is-pdf">
+        <span class="icon">PDF</span>
+        <div class="name">
+          <a href="TME8.pdf">TME8.pdf</a>
+          <div class="desc">Travaux encadrés — séance 8</div>
+        </div>
+        <span class="badge">Sujet</span>
+      </li>
+
+      <li class="is-pdf">
+        <span class="icon">PDF</span>
+        <div class="name">
+          <a href="TME9.pdf">TME9.pdf</a>
+          <div class="desc">Travaux encadrés — séance 9</div>
+        </div>
+        <span class="badge">Sujet</span>
+      </li>
+
+      <li class="is-lib">
+        <span class="icon">LIB</span>
+        <div class="name">
+          <a href="libmem.pdf">libmem.pdf</a>
+          <div class="desc">Bibliothèque — mémoire</div>
+        </div>
+        <span class="badge">Bibliothèque</span>
+      </li>
+
+      <li class="is-pdf">
+        <span class="icon">PDF</span>
+        <div class="name">
+          <a href="TME10-11.pdf">TME10-11.pdf</a>
+          <div class="desc">Travaux encadrés — séances 10 et 11</div>
+        </div>
+        <span class="badge">Sujet</span>
+      </li>
+
+    </ul>
+  </section>
+
+  <section style="margin-top: 24px;">
+    <div class="section-header">
+      <h2>Librairies pour TME</h2>
+      <p>Archives sources à télécharger et compiler</p>
+    </div>
+
+    <ul class="filelist">
+
+      <li class="is-tgz">
+        <span class="icon">TGZ</span>
+        <div class="name">
+          <a href="libsched.tgz">libsched.tgz</a>
+          <div class="desc">Bibliothèque d'ordonnancement</div>
+        </div>
+        <span class="badge">Archive</span>
+      </li>
+
+      <li class="is-tgz">
+        <span class="icon">TGZ</span>
+        <div class="name">
+          <a href="libsem.tgz">libsem.tgz</a>
+          <div class="desc">Bibliothèque de sémaphores</div>
+        </div>
+        <span class="badge">Archive</span>
+      </li>
+
+      <li class="is-tgz">
+        <span class="icon">TGZ</span>
+        <div class="name">
+          <a href="TME-TAS.tgz">TME-TAS.tgz</a>
+          <div class="desc">Archive TME — TAS</div>
+        </div>
+        <span class="badge">Archive</span>
+      </li>
+
+      <li class="is-tgz">
+        <span class="icon">TGZ</span>
+        <div class="name">
+          <a href="TME_FAT.tgz">TME_FAT.tgz</a>
+          <div class="desc">Archive TME — FAT</div>
+        </div>
+        <span class="badge">Archive</span>
+      </li>
+
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  psens.github.io
+</footer>
+
+</body>
+</html>
